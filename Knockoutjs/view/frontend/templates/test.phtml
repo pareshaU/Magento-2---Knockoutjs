@@ -1,0 +1,15 @@
+<div id="testdiv" data-bind="scope:'test'">
+  <!-- ko template: getTemplate() --><!-- /ko -->
+<script type="text/x-magento-init">
+{"#testdiv":{"Magento_Ui/js/core/app": <?php echo $block->getJsLayout();?>}}
+</script>
+<script>
+        require([
+            'mage/url',
+            'Magento_Ui/js/block-loader'
+        ], function(url, blockLoader) {
+            blockLoader("<?php /* @escapeNotVerified */ echo $block->getViewFileUrl('images/loader-1.gif'); ?>");
+            return url.setBaseUrl('<?php /* @escapeNotVerified */ echo $block->getBaseUrl();?>');
+        })
+    </script>
+</div>
